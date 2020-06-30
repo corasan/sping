@@ -15,19 +15,17 @@ struct Input: View {
             GeometryReader { (g) in
                 HStack(alignment: .center, spacing: 8) {
                     Spacer()
-                    VStack {}
-                        .frame(width: 30, height: 30)
-                        .background(Color.red)
-                    VStack {}
-                        .frame(width: 30, height: 30)
-                        .background(Color.blue)
                     HStack {
                         TextField("Type message here", text: $text)
+                            .frame(height: 40)
                             .padding(.horizontal, 20)
                     }
                     .frame(height: 50)
                     .background(Color("gray"))
                     .cornerRadius(50)
+                    VStack {}
+                        .frame(width: 30, height: 30)
+                        .background(Color.blue)
                     Spacer()
                 }
                 .frame(height: 65)

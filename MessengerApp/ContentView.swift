@@ -11,9 +11,10 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Header()
-            Spacer()
+            Messages()
             Input()
         }
+        .edgesIgnoringSafeArea(.top)
     }
 }
 
