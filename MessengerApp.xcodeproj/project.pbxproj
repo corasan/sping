@@ -52,6 +52,7 @@
 		BAFDD8A124AAE5EE0012CF0C /* MessengerApp */ = {
 			isa = PBXGroup;
 			children = (
+				BAFDD8B124AAEC780012CF0C /* Components */,
 				BAFDD8A224AAE5EE0012CF0C /* MessengerAppApp.swift */,
 				BAFDD8A424AAE5EE0012CF0C /* ContentView.swift */,
 				BAFDD8A624AAE5EE0012CF0C /* Assets.xcassets */,
@@ -67,6 +68,13 @@
 				BAFDD8A924AAE5EE0012CF0C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BAFDD8B124AAEC780012CF0C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
