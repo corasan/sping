@@ -10,6 +10,7 @@ import SwiftUI
 struct ChatRoomView: View {
     var body: some View {
         VStack {
+            Spacer()
             Messages()
             Input()
         }

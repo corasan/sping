@@ -9,11 +9,16 @@ import SwiftUI
 
 struct Messages: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            TextBubble()
+        ScrollView {
+            VStack(spacing: 14) {
+                TextBubble()
+                ForEach(1...5, id: \.self) { msg in
+                    TextBubble()
+                }
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 16)
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 16)
     }
 }
 
