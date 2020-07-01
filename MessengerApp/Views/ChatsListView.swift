@@ -10,12 +10,16 @@ import SwiftUI
 struct ChatsListView: View {
     var body: some View {
         NavigationView {
+            NavigationLink(destination: AuthView()) {
+                Text("AuthView")
+            }
             List {
                 ChatItem()
                 ChatItem()
             }
             .navigationBarTitle(Text("Chats"), displayMode: .large)
             .edgesIgnoringSafeArea(.top)
+            
         }
     }
 }
