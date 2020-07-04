@@ -11,7 +11,7 @@ struct Message: Identifiable, Hashable {
     var id: String
     var sentBy: String
     var text: String
-    var createdAt: String
+//    var createdAt: String
     var chatId: String
 }
 

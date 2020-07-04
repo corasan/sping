@@ -6,12 +6,31 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 struct Input: View {
-    @Binding var input: String
+    @State var input: String = ""
+    var chatId: String
+    private var messagesRef: CollectionReference
+    @EnvironmentObject var authState: AuthState
     
-    func sendMesssage() {
-        
+    init(chatId: String) {
+        self.chatId = chatId
+        self.messagesRef = Firestore.firestore().collection("ChatRooms/\(chatId)/messages")
+    }
+    
+    func sendMesssage() -> Void {
+        let doc = self.messagesRef.document()
+        let uid = self.authState.user?.uid
+        let message = ["id": doc.documentID, "sentBy": uid!, "text": self.input, "chatId": self.chatId, "createdAt": FieldValue.serverTimestamp()] as [String : Any]
+        doc.setData(message) { err in
+            if let error = err {
+                print("Error sending message: \(error)")
+            } else {
+                self.input = ""
+            }
+        }
     }
 
     var body: some View {
@@ -27,9 +46,9 @@ struct Input: View {
                     .frame(height: 50)
                     .background(Color("gray"))
                     .cornerRadius(50)
-                    VStack {}
-                        .frame(width: 30, height: 30)
-                        .background(Color.blue)
+                    Button(action: self.sendMesssage) {
+                        Text("Send")
+                    }
                     Spacer()
                 }
                 .frame(height: 65)
@@ -43,6 +62,6 @@ struct Input_Previews: PreviewProvider {
     @State static var input = ""
 
     static var previews: some View {
-        Input(input: $input)
+        Input(chatId: "1").environmentObject(AuthState())
     }
 }

@@ -10,7 +10,6 @@ import Combine
 
 struct ChatRoomView: View {
     var chatRoom: ChatRoom
-    @State var messageInput = ""
     
     init(chatRoom: ChatRoom) {
         self.chatRoom = chatRoom
@@ -20,7 +19,7 @@ struct ChatRoomView: View {
         VStack {
             Spacer()
             Messages(messages: self.chatRoom.messages)
-            Input(input: $messageInput)
+            Input(chatId: chatRoom.id)
         }
         .modifier(AdaptsToKeyboard())
     }
