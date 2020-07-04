@@ -19,7 +19,7 @@ struct MessengerAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ChatsListView()
+            ContentView().environmentObject(authState)
         }
     }
 }
