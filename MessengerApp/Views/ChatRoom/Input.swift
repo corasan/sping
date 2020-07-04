@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct Input: View {
-    @State var text: String = ""
+    @Binding var input: String
+    
+    func sendMesssage() {
+        
+    }
 
     var body: some View {
         VStack(alignment: .center) {
@@ -16,7 +20,7 @@ struct Input: View {
                 HStack(alignment: .center, spacing: 8) {
                     Spacer()
                     HStack {
-                        TextField("Type message here", text: $text)
+                        TextField("Type message here", text: $input)
                             .frame(height: 40)
                             .padding(.horizontal, 20)
                     }
@@ -36,7 +40,9 @@ struct Input: View {
 }
 
 struct Input_Previews: PreviewProvider {
+    @State static var input = ""
+
     static var previews: some View {
-        Input()
+        Input(input: $input)
     }
 }

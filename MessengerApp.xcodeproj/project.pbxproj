@@ -16,6 +16,7 @@
 		BABB311C24AC159500FC910B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB311B24AC159500FC910B /* AuthView.swift */; };
 		BABB311F24AC367700FC910B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABB311E24AC367600FC910B /* GoogleService-Info.plist */; };
 		BAD5ACA824AD6ECE0051A129 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5ACA724AD6ECE0051A129 /* AuthState.swift */; };
+		BAFB458E24B0E6B400B64EB2 /* AdaptsToKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFB458D24B0E6B400B64EB2 /* AdaptsToKeyboard.swift */; };
 		BAFDD8A324AAE5EE0012CF0C /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDD8A224AAE5EE0012CF0C /* MessengerAppApp.swift */; };
 		BAFDD8A524AAE5EE0012CF0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDD8A424AAE5EE0012CF0C /* ContentView.swift */; };
 		BAFDD8A724AAE5EE0012CF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFDD8A624AAE5EE0012CF0C /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		BABB311E24AC367600FC910B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABB312024AC368000FC910B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Components/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAD5ACA724AD6ECE0051A129 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		BAFB458D24B0E6B400B64EB2 /* AdaptsToKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToKeyboard.swift; sourceTree = "<group>"; };
 		BAFDD89F24AAE5EE0012CF0C /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFDD8A224AAE5EE0012CF0C /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
 		BAFDD8A424AAE5EE0012CF0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,8 +84,8 @@
 		BA82634724ABD58E00E19B95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BA82634A24ABD64000E19B95 /* ChatsListView.swift */,
-				BA82634C24ABD6C500E19B95 /* ChatRoomView.swift */,
+				BAFB458C24B0DC9400B64EB2 /* ChatList */,
+				BAFB458B24B0DC7900B64EB2 /* ChatRoom */,
 				BABB311B24AC159500FC910B /* AuthView.swift */,
 			);
 			path = Views;
@@ -95,6 +97,27 @@
 				BAD5ACA724AD6ECE0051A129 /* AuthState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BAFB458B24B0DC7900B64EB2 /* ChatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				BA82634324AB987400E19B95 /* TextBubble.swift */,
+				BA82634524ABAD4900E19B95 /* Messages.swift */,
+				BAFDD8B224AAED980012CF0C /* Input.swift */,
+				BA82634C24ABD6C500E19B95 /* ChatRoomView.swift */,
+			);
+			path = ChatRoom;
+			sourceTree = "<group>";
+		};
+		BAFB458C24B0DC9400B64EB2 /* ChatList */ = {
+			isa = PBXGroup;
+			children = (
+				BAFDD8B424AB01040012CF0C /* Header.swift */,
+				BA82634E24ABD7AB00E19B95 /* ChatItem.swift */,
+				BA82634A24ABD64000E19B95 /* ChatsListView.swift */,
+			);
+			path = ChatList;
 			sourceTree = "<group>";
 		};
 		BAFDD89624AAE5EE0012CF0C = {
@@ -145,11 +168,7 @@
 		BAFDD8B124AAEC780012CF0C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				BAFDD8B224AAED980012CF0C /* Input.swift */,
-				BAFDD8B424AB01040012CF0C /* Header.swift */,
-				BA82634324AB987400E19B95 /* TextBubble.swift */,
-				BA82634524ABAD4900E19B95 /* Messages.swift */,
-				BA82634E24ABD7AB00E19B95 /* ChatItem.swift */,
+				BAFB458D24B0E6B400B64EB2 /* AdaptsToKeyboard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -271,6 +290,7 @@
 			files = (
 				BA82634B24ABD64000E19B95 /* ChatsListView.swift in Sources */,
 				BA82634424AB987400E19B95 /* TextBubble.swift in Sources */,
+				BAFB458E24B0E6B400B64EB2 /* AdaptsToKeyboard.swift in Sources */,
 				BA82634624ABAD4900E19B95 /* Messages.swift in Sources */,
 				BAFDD8B524AB01040012CF0C /* Header.swift in Sources */,
 				BAD5ACA824AD6ECE0051A129 /* AuthState.swift in Sources */,
