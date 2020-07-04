@@ -9,6 +9,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        
+        let authState = AuthState()
+        authState.listen()
+        
         return true
     }
 }
@@ -16,7 +20,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct MessengerAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    @StateObject var authState = AuthState()
+    
     var body: some Scene {
         WindowGroup {
             ContentView().environmentObject(authState)

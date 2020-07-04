@@ -31,7 +31,6 @@ struct Input: View {
                 .frame(height: 65)
             }
             .frame(height: 65)
-            .background(Color.white)
         }
     }
 }

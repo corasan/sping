@@ -7,23 +7,40 @@
 
 import SwiftUI
 
+struct Message: Identifiable, Hashable {
+    var id: String
+    var sentBy: String
+    var text: String
+    var createdAt: String
+    var chatId: String
+}
+
 struct Messages: View {
+    @EnvironmentObject var authState: AuthState
+    var messages: [NSDictionary]
+    
+    func isThisMe(_ message: NSDictionary) -> Bool {
+        if self.authState.user?.uid == message["sentBy"] as? String {
+            return true
+        }
+        return false
+    }
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 14) {
-                TextBubble()
-                ForEach(1...5, id: \.self) { msg in
-                    TextBubble()
-                }
+            ForEach(self.messages, id: \.self) { message in
+                TextBubble(text: message["text"]! as! String, isMe: isThisMe(message))
             }
-            .padding(.vertical, 10)
-            .padding(.horizontal, 16)
         }
+        .padding(.horizontal, 16)
     }
 }
 
 struct Messages_Previews: PreviewProvider {
+    static var messages = [["id": "1", "sentBy": "YIs2kyZ8pwN5Hrp7ETWPj7QLVBv2", "text": "Hello world", "createdAt": "July 1, 2020 at 11:54:00 PM UTC-4", "chatId": "1"]]
+
     static var previews: some View {
-        Messages()
+        Messages(messages: self.messages as [NSDictionary])
+            .environmentObject(AuthState())
     }
 }

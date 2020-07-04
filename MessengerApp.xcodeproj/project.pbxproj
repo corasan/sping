@@ -15,6 +15,7 @@
 		BA82635124ABDDB400E19B95 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA82635024ABDDB400E19B95 /* Launch Screen.storyboard */; };
 		BABB311C24AC159500FC910B /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB311B24AC159500FC910B /* AuthView.swift */; };
 		BABB311F24AC367700FC910B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BABB311E24AC367600FC910B /* GoogleService-Info.plist */; };
+		BAD5ACA824AD6ECE0051A129 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD5ACA724AD6ECE0051A129 /* AuthState.swift */; };
 		BAFDD8A324AAE5EE0012CF0C /* MessengerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDD8A224AAE5EE0012CF0C /* MessengerAppApp.swift */; };
 		BAFDD8A524AAE5EE0012CF0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDD8A424AAE5EE0012CF0C /* ContentView.swift */; };
 		BAFDD8A724AAE5EE0012CF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAFDD8A624AAE5EE0012CF0C /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		BABB311D24AC16CE00FC910B /* MessengerApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessengerApp.entitlements; sourceTree = "<group>"; };
 		BABB311E24AC367600FC910B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BABB312024AC368000FC910B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Components/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BAD5ACA724AD6ECE0051A129 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		BAFDD89F24AAE5EE0012CF0C /* MessengerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessengerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAFDD8A224AAE5EE0012CF0C /* MessengerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerAppApp.swift; sourceTree = "<group>"; };
 		BAFDD8A424AAE5EE0012CF0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BAD5ACA624AD6EB70051A129 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BAD5ACA724AD6ECE0051A129 /* AuthState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BAFDD89624AAE5EE0012CF0C = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		BAFDD8A124AAE5EE0012CF0C /* MessengerApp */ = {
 			isa = PBXGroup;
 			children = (
+				BAD5ACA624AD6EB70051A129 /* Models */,
 				BABB311E24AC367600FC910B /* GoogleService-Info.plist */,
 				BA82634724ABD58E00E19B95 /* Views */,
 				BAFDD8B124AAEC780012CF0C /* Components */,
@@ -262,6 +273,7 @@
 				BA82634424AB987400E19B95 /* TextBubble.swift in Sources */,
 				BA82634624ABAD4900E19B95 /* Messages.swift in Sources */,
 				BAFDD8B524AB01040012CF0C /* Header.swift in Sources */,
+				BAD5ACA824AD6ECE0051A129 /* AuthState.swift in Sources */,
 				BAFDD8B324AAED980012CF0C /* Input.swift in Sources */,
 				BABB311C24AC159500FC910B /* AuthView.swift in Sources */,
 				BA82634D24ABD6C500E19B95 /* ChatRoomView.swift in Sources */,
