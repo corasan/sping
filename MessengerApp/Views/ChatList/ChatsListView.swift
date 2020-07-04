@@ -11,7 +11,7 @@ import FirebaseAuth
 
 struct ChatRoom: Identifiable {
     var id: String
-    var members: Any
+    var members: [String]
     var messages: [NSDictionary]
     var lastMessage: String
     
@@ -26,7 +26,6 @@ struct ChatsListView: View {
     @State var chatrooms = [ChatRoom]()
     
     func fetchChats(uid: String) {
-        print("USER_UID___: \(uid)")
         self.db.collection("ChatRooms").whereField("members", arrayContains: uid).addSnapshotListener { snapshot, error in
             guard let documents = snapshot?.documents else {
                 print("Error fetching documents: \(error!)")
@@ -34,7 +33,7 @@ struct ChatsListView: View {
             }
             
             let data = documents.map { doc -> ChatRoom in
-                return ChatRoom(id: doc.documentID, members: doc.get("members") as Any, messages: doc.get("messages") as! [NSDictionary], lastMessage: doc.get("lastMessage") as! String)
+                return ChatRoom(id: doc.documentID, members: doc.get("members") as! [String], messages: doc.get("messages") as! [NSDictionary], lastMessage: doc.get("lastMessage") as! String)
             }
             self.chatrooms = data
         }

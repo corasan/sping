@@ -36,7 +36,6 @@ struct TextBubble: View {
             }
         }
         .padding(.vertical, 10)
-        .animation(.easeIn(duration: 2))
     }
 }
 

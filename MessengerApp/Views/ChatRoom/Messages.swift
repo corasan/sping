@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct Message: Identifiable, Hashable {
-    var id: String
-    var sentBy: String
-    var text: String
-//    var createdAt: String
-    var chatId: String
-}
-
 struct Messages: View {
     @EnvironmentObject var authState: AuthState
     var messages: [NSDictionary]
